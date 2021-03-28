@@ -1,0 +1,81 @@
+/* Задаем всему body отступ 0*/
+body {
+	margin: 0;
+}
+
+/* Задаем всем поседующим блокам расчет ширины и высоты элементов*/
+*,
+*:bedore,
+*:after {
+	box-sizing: border-box;
+}
+
+/* Задаем классу container ширину и отступ 
+(0 - верх и низ, auto - лево и право, браузер сам расчитает отступ)*/
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+}
+
+/* display - как отображается на странице, flex - как блочный элемент
+для justify-content отличный пример тут 
+https://developer.mozilla.org/ru/docs/Web/CSS/justify-content*/
+.header__inner {
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Задаем ширину блока и его высоту
+(vh - проценты от высоты окна браузера, а не от родительского элемента)
+картинку доавляем через css чтобы удобнее было с ней сразу работать
+center - по центру
+no-repeat - не посторять изображение(можеьш попоробовать убрать,
+чтобы понять в чем разница
+bg-size: cover - сохранение соотношения сторон
+*/
+.intro {
+	width: 100%;
+	height: 50vh;
+
+	background: url(img/bg3.jpg) center no-repeat;
+	background-size: cover;
+}
+
+/* Позиционирование элемента относительно окна браузера(см. htmlbook.ru)
+z-index - определение положения в "глубину". 
+Хоть и 2D страницы, мы можем подкладывать друг под друга элементы*/
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000;
+}
+
+/*Отступы, размер шрифта, толщина шрифта и цвет соответственно*/
+.header__logo {
+	margin: 0 30px;
+	font-size: 30px;
+	font-weight: 700;
+	color: #fff;
+}
+
+/* Указываем что все буквы заглавные(uppercase) и размер шрифта*/
+.nav {
+	text-transform: uppercase;
+	font-size: 14px;	
+}
+
+/* inline-block - элемент имеет обтекание, то есть другие ближайшие элементы
+строятся вокруг него
+vertical-align - вертикальное выравнивание, как ни странно:)
+отступ
+text-decoration - работа с текстом, none убирает подчеркивание(_) у ссылок*/
+.nav-link {
+	display: inline-block;
+	vertical-align: top;
+	margin: 0 30px;
+	text-decoration: none;
+	color: #fff;
+}
